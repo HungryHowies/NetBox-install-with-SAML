@@ -1,5 +1,5 @@
 # netbox
-Netbo lab install
+Netbox lab install
 
 NetBox Installation Final
 Overview
