@@ -74,25 +74,25 @@ wget https://github.com/netbox-community/netbox/archive/refs/tags/v3.6.5.tar.gz
 Extract Netbox and create a soft link.
 
 ```
-sudo tar -xzf v3.6.5.tar.gz -C /opt
+tar -xzf v3.6.5.tar.gz -C /opt
 ```
 ```
-sudo ln -s /opt/netbox-3.6.5/ /opt/netbox
+ln -s /opt/netbox-3.6.5/ /opt/netbox
 ```
 
 ### Create System user
 
 ```
-sudo adduser --system --group netbox
+adduser --system --group netbox
 ```
 ```
-sudo chown --recursive netbox /opt/netbox/netbox/media/
+schown --recursive netbox /opt/netbox/netbox/media/
 ```
 ```
-sudo chown --recursive netbox /opt/netbox/netbox/reports/
+chown --recursive netbox /opt/netbox/netbox/reports/
 ```
 ```
-sudo chown --recursive netbox /opt/netbox/netbox/scripts/
+chown --recursive netbox /opt/netbox/netbox/scripts/
 ```
 
 ### Generate a key for SECRET_KEY
