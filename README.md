@@ -101,6 +101,15 @@ python3 /opt/netbox-3.6.5/netbox/generate_secret_key.py/generate_secret_key.py
 
 ## NetBox Configuration file (configuration.py)
 
+navigate to the following directory.
+```
+cd /opt/netbox-3.6.5/netbox/netbox
+```
+Copy the configuration_example.py file and rename it.
+```
+cp configuration_example.py configuration.py
+```
+
 Naviagate to configuration.py file.
 
 ```
