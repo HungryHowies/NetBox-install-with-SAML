@@ -368,6 +368,10 @@ Add plugin's to local requirement text file.
 sudo sh -c "echo 'django_saml2_auth' >> /opt/netbox/local_requirements.txt"
 ```
 ```
+sudo sh -c "echo 'django3-auth-saml2' >> /opt/netbox/local_requirements.txt"
+```
+
+```
 sudo sh -c "echo 'netbox-plugin-auth-saml2' >> "/opt/netbox/local_requirements.txt""
 ```
 
