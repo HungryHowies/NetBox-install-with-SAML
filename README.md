@@ -40,6 +40,11 @@ CREATE USER netbox WITH PASSWORD 'J5brHrAXFLQSif0K';
 ```
 ALTER DATABASE netbox OWNER TO netbox;
 ```
+Exit
+
+```
+quit
+```
 
 ### Installation Dependencies 
 
