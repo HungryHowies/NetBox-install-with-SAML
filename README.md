@@ -213,6 +213,8 @@ LOGGING = {
 
 ### Create a Super User
 
+########## Something is wrong in this section
+
 ```
 source /opt/netbox/venv/bin/activate
 ```
