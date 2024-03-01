@@ -51,6 +51,11 @@ quit
 ```
 apt install -y python3 python3-pip python3-venv python3-dev build-essential libxml2-dev libxslt1-dev  libpq-dev libssl-dev zlib1g-dev
 ```
+Upgrade PIP to latest version
+
+```
+pip3 install --upgrade pip
+```
 
 ### Check Python Version
 
