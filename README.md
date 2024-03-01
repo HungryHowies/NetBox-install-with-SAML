@@ -110,7 +110,7 @@ Copy the configuration_example.py file and rename it.
 cp configuration_example.py configuration.py
 ```
 
-Naviagate to configuration.py file.
+Edit the configuration.py file.
 
 ```
 vi /opt/netbox-3.6.5/netbox/netbox/configuration.py
