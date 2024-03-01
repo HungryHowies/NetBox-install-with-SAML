@@ -171,6 +171,7 @@ Disabled in configuration.py file.
 # 'ENGINE': 'django.db.backends.postgresql', # Database engine
 ```
 Set DEBUG to true
+######### Dont this i need this
 ```
 DEBUG = True
 ```
