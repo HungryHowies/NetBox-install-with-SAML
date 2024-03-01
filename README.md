@@ -489,7 +489,7 @@ location / {
 Configure the setting.py file.
 
 ```
-vi /opt/netbox-3.6.7/netbox/netbox/settings.py
+vi /opt/netbox/netbox/netbox/settings.py
 ```
 
 Add the following to the bottom of the file.
