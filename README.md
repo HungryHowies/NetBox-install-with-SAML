@@ -230,7 +230,7 @@ LOGGING = {
   },
 }
 ```
-## NetBox Service
+## NetBox Service, User and Upgrade Script
 
 Gunicorn Setup
 
@@ -251,14 +251,14 @@ sudo systemctl start netbox netbox-rq
 ```
 sudo systemctl enable netbox netbox-rq
 ```
-Check  Status
+Check Status
 
 ```
 systemctl status netbox netbox-rq
 ```
 
 
-### Create a Super User
+Create a Super User
 
 Run the packaged upgrade script (upgrade.sh) to perform the following actions:
 
@@ -267,11 +267,17 @@ Run the packaged upgrade script (upgrade.sh) to perform the following actions:
  * Run database schema migrations
  * Aggregate static resource files on disk
 
-After executing the upgrade script, resolve any errors before continuing.  
+Executing the upgrade script.
+
 ```
  /opt/netbox/upgrade.sh
 ```
+Warning: If the script does not run, or does not complete checks that show "OK",
+something has gone wrong. Call for help. Do not proceed with the rest of this guide until the
+installation has been corrected.
+
 Enter Python virtual environment.
+
 ```
 source /opt/netbox/venv/bin/activate
 ```
@@ -288,30 +294,25 @@ Create super user and follow the promt.
 python3 manage.py createsuperuser
 ```
 
-### Schedule the Housekeeping Task
+Schedule the Housekeeping Task
 
 ```
 sudo ln -s /opt/netbox/contrib/netbox-housekeeping.sh /etc/cron.daily/netbox-housekeeping
 ```
-### Test the Application
 
-Change directory
-
-```
-cd /opt/netbox-3.6.5/netbox
-```
+Test the Application
 
 ```
 python3 manage.py runserver 0.0.0.0:8000 --insecure
 ```
-###  Verify Service Status
+Once test is completed exit out of Python venv.
+
+Verify Service Status
 
 ```
 redis-cli ping
 ```
-Warning: If the test service does not run, or does not complete checks that show "OK",
-something has gone wrong. Call for help. Do not proceed with the rest of this guide until the
-installation has been corrected.
+
 
 ### Create SSL Certificate with Let's Encrypt
 
