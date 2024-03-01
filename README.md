@@ -449,7 +449,7 @@ Edit nginx site file.
 vi  /etc/nginx/sites-available/netbox
 ```
 
-Results:
+Configure site file.
 
 ```
 map $http_x_forwarded_proto $thescheme {
@@ -485,6 +485,21 @@ location / {
   }
 }
 ```
+Disable default site.
+
+```
+cd /etc/nginx/sites-enabled
+```
+```
+rm default
+```
+
+Enable netbox site.
+
+```
+ln -s /etc/nginx/sites-available/netbox  /etc/nginx/sites-enabled/netbox
+```
+
 
 Configure the setting.py file.
 
