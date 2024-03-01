@@ -233,13 +233,17 @@ LOGGING = {
 
 ### Create a Super User
 
-######### the migrate does work here. need to move
-Apply Data migration
+Run the packaged upgrade script (upgrade.sh) to perform the following actions:
+
+ * Create a Python virtual environment
+ * Install all required Python packages
+ * Run database schema migrations
+ * Aggregate static resource files on disk
 
 ```
-python manage.py migrate
+ /opt/netbox/upgrade.sh
 ```
-
+enter Python virtual env.
 ```
 source /opt/netbox/venv/bin/activate
 ```
