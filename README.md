@@ -439,6 +439,7 @@ Create/Name the button for SSO.
 ```
 BANNER_LOGIN = '<a href="/api/plugins/sso/login" class="btn btn-primary btn-block">Login with SSO</a>'
 ```
+Save and close file.
 
 ### Nginx Configuration
 
