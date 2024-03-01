@@ -504,6 +504,11 @@ SAML2_AUTH_CONFIG = {
 
 Enable Login required  by setting this  to TRUE to permit only authenticated users to access any part of NetBox.
 
+Edit the following file
+```
+vi /opt/netbox/netbox/netbox/configuration.py
+```
+
 ```
 LOGIN_REQUIRED = True
 ```
