@@ -6,7 +6,7 @@ Netbox lab install
 This documentation describes how to install NetBox, configure NetBox with Let's encrypt and SAML for SSO.
 
 
-## Prerequisite:
+### Prerequisite:
 
 * Ubunt-22.0.4
 * All updates/upgrade completed (sudo apt update && upgrade)
@@ -18,24 +18,19 @@ This documentation describes how to install NetBox, configure NetBox with Let's 
 * Install locate (apt install mlocate)
 * Net-tools (apt install net-tools)
 
-## PostgreSQL Database Installation
+### PostgreSQL Database Installation
 ```
 sudo apt install -y postgresql
 ```
 
-## Check Version
-
-```
-psql -V
-```
-
-## Database Creation
+### login Postgres
 
 ```
 sudo -u postgres psql
 ```
 
-## Database Create
+### Database Create and configure
+
 ```
 CREATE DATABASE netbox;
 ```
@@ -47,31 +42,32 @@ ALTER DATABASE netbox OWNER TO netbox;
 ```
 
 
-## Verify Service Status
+###  Verify Service Status
 ```
 redis-cli ping
 ```
 
-## NetBox Installation
+### Installation dependencies 
 
 ```
 sudo apt install -y python3 python3-pip python3-venv python3-dev build-essential libxml2-dev libxslt1-dev libffidev libpq-dev libssl-dev zlib1g-dev
 ```
 
-## Check Version
+### Check Python Version
 ```
 python3 -V
 ```
 
-## Download NetBox
+### Download NetBox
 ```
 
 sudo wget https://github.com/netbox-community/netbox/archive/refs/tags/v3.6.5.tar.gz
 ```
 
-## Extract package
+### Extract Netbox package
 
 Extract Netbox and create a soft link.
+
 ```
 sudo tar -xzf v3.6.5.tar.gz -C /opt
 ```
@@ -80,7 +76,7 @@ sudo ln -s /opt/netbox-3.6.5/ /opt/netbox
 ```
 
 
-## Create System user
+### Create System user
 ```
 sudo adduser --system --group netbox
 ```
@@ -93,9 +89,10 @@ sudo chown --recursive netbox /opt/netbox/netbox/reports/
 ```
 sudo chown --recursive netbox /opt/netbox/netbox/scripts/
 ```
-## Netbox SAML Plugin Install
+### Netbox SAML Plugin Install
 
 Prepping for NetBox plugin to be enabled. Configuring the following files before restarting services.
+
 ```
 sudo apt-get install pkg-config libxml2-dev libxmlsec1-dev libxmlsec1-openssl xmlsec1
 ```
@@ -106,7 +103,7 @@ source /opt/netbox/venv/bin/activate
 cd /opt/netbox
 ```
 
-Excute pip3 command
+Using Pip3 install packages needed.
 
 ```
 pip3 install xmlsec
@@ -118,7 +115,7 @@ pip3 install django3-auth-saml2
 pip3 install netbox-plugin-auth-saml2
 ```
 
-Add plugin's to local requirement text file
+Add plugin's to local requirement text file.
 
 ```
 sudo sh -c "echo 'django_saml2_auth' >> /opt/netbox/local_requirements.txt"
@@ -127,32 +124,40 @@ sudo sh -c "echo 'django_saml2_auth' >> /opt/netbox/local_requirements.txt"
 sudo sh -c "echo 'netbox-plugin-auth-saml2' >> "/opt/netbox/local_requirements.txt""
 ```
 
-Netbox Plugin for SSO using SAML2
+Configure Netbox for SSO using the SAML2 Plugin
 
 ```
 vi /opt/netbox/netbox/netbox/configuration.py
 ```
 
- Adjust ALLOWED_HOST to FQDN.
+Adjust ALLOWED_HOST to FQDN.
 
 ```
 ALLOWED_HOSTS = ['netbox.domain.com']
 ```
-## Configuration
-```
-cd /opt/netbox/netbox/netbox/
-```
-```
-sudo cp configuration_example.py configuration.py
-```
+### Generate a key for SECRET_KEY
 
-## Generate a key for SECRET_KEY
+Save the output for the configuration step below. This will be added to Netbox configuration file.
+
 ```
 python3 ../generate_secret_key.py
 ```
 
-NetBox Configuration file ( configuration.py)
-ALLOWED_HOST will be configured to localhost till the certificates are made from CertBot below.
+Naviagate to configuration.py file.
+
+```
+vi /opt/netbox-3.6.5/netbox/netbox/configuration.py
+```
+
+In this section of the configuration.py file add the secert key.
+
+```
+SECRET_KEY = '!3#qSHaL&(7mw38....................j^mKZG@$Ax'
+```
+
+### NetBox Configuration file ( configuration.py)
+
+NOTE: ALLOWED_HOST will be configured to localhost till the certificates are made from CertBot below.
 
 ```
 ALLOWED_HOSTS = ['localhost']
@@ -183,11 +188,7 @@ REDIS = {
   }
 }
 ```
-The secret key that was generated
 
-```
-SECRET_KEY = '!3#qSHaL&(7mw38....................j^mKZG@$Ax'
-```
 
 ## Logging configuration
 
