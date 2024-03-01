@@ -153,6 +153,14 @@ REDIS = {
   }
 }
 ```
+### Remote File Storage
+
+Disabled in configuration.py file.
+
+```
+# 'ENGINE': 'django.db.backends.postgresql', # Database engine
+```
+Save and close file.
 
 ### Logging configuration
 
@@ -203,13 +211,6 @@ LOGGING = {
 }
 ```
 
-### Remote File Storage
-
-Disabled in configuration.py file.
-
-```
-# 'ENGINE': 'django.db.backends.postgresql', # Database engine
-```
 
 ### Upgrade Script
 
