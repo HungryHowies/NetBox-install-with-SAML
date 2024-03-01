@@ -477,6 +477,15 @@ SAML2_AUTH_CONFIG = {
   'METADATA_AUTO_CONF_URL': "https://zitadel.domain.com/saml/v2/metadata"
 }
 ```
+### Netbox Security 
+
+Enable Login required  by setting this  to TRUE to permit only authenticated users to access any part of NetBox.
+
+```
+LOGIN_REQUIRED = True
+```
+
+### Restart service 
 
 Restart nginx services.
 
