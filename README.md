@@ -61,7 +61,7 @@ python3 -V
 ### Download NetBox
 ```
 
-sudo wget https://github.com/netbox-community/netbox/archive/refs/tags/v3.6.5.tar.gz
+wget https://github.com/netbox-community/netbox/archive/refs/tags/v3.6.5.tar.gz
 ```
 
 ### Extract Netbox package
