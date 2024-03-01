@@ -393,8 +393,13 @@ the Metadata and Paste it in the file called DCIM.xml
 ```
 vi /opt/netbox/DCIM.xml
 ```
+Save and close file
 
 Adjust the configuration.py file as shown below
+
+```
+vi /opt/netbox/netbox/netbox/configuration.py
+```
 
 ```
 PLUGINS = ['django3_saml2_nbplugin']
