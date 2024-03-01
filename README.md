@@ -132,10 +132,10 @@ In this section of the configuration.py file add the secert key.
 SECRET_KEY = '!3#qSHaL&(7mw38....................j^mKZG@$Ax'
 ```
 
-NOTE: ALLOWED_HOST will be configured to [] till the certificates are made from CertBot below.
+NOTE: ALLOWED_HOST will be configured to ['*'].
 
 ```
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['*']
 DATABASE = {
   'NAME': 'netbox', # Database name
   'USER': 'netbox', # PostgreSQL username
