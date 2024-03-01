@@ -109,7 +109,7 @@ Save the output for the configuration step below. This will be added to Netbox c
 python3 /opt/netbox/netbox/generate_secret_key.py
 ```
 
-## NetBox Configuration file (configuration.py)
+### NetBox Configuration file (configuration.py)
 
 navigate to the following directory.
 ```
@@ -170,8 +170,8 @@ Disabled in configuration.py file.
 ```
 # 'ENGINE': 'django.db.backends.postgresql', # Database engine
 ```
-Set DEBUG to true
-######### Dont this i need this
+NOTE: If needed you can set DEBUG to true to resolve errors.
+
 ```
 DEBUG = True
 ```
@@ -230,6 +230,33 @@ LOGGING = {
   },
 }
 ```
+## NetBox Service
+
+Gunicorn Setup
+
+```
+sudo cp /opt/netbox/contrib/gunicorn.py /opt/netbox/gunicorn.py
+```
+Systemd setup.
+
+```
+sudo cp -v /opt/netbox/contrib/*.service /etc/systemd/system/
+```
+```
+sudo systemctl daemon-reload
+```
+```
+sudo systemctl start netbox netbox-rq
+```
+```
+sudo systemctl enable netbox netbox-rq
+```
+Check  Status
+
+```
+systemctl status netbox.service
+```
+
 
 ### Create a Super User
 
@@ -240,10 +267,11 @@ Run the packaged upgrade script (upgrade.sh) to perform the following actions:
  * Run database schema migrations
  * Aggregate static resource files on disk
 
+After executing the upgrade script, resolve any errors before continuing.  
 ```
  /opt/netbox/upgrade.sh
 ```
-enter Python virtual env.
+Enter Python virtual environment.
 ```
 source /opt/netbox/venv/bin/activate
 ```
@@ -285,32 +313,7 @@ Warning: If the test service does not run, or does not complete checks that show
 something has gone wrong. Call for help. Do not proceed with the rest of this guide until the
 installation has been corrected.
 
-## NetBox Service
-
-Gunicorn Setup
-
-```
-sudo cp /opt/netbox/contrib/gunicorn.py /opt/netbox/gunicorn.py
-```
-Systemd setup
-```
-sudo cp -v /opt/netbox/contrib/*.service /etc/systemd/system/
-```
-```
-sudo systemctl daemon-reload
-```
-```
-sudo systemctl start netbox netbox-rq
-```
-```
-sudo systemctl enable netbox netbox-rq
-```
-Check  Status
-```
-systemctl status netbox.service
-```
-
-## Create SSL Certificate with Let's Encrypt
+### Create SSL Certificate with Let's Encrypt
 
 There are a few prerequisites to use Let’s Encrypts. You have to accept the ToS of Let’s Encrypt to register an account.
 Port 80 of the node needs to be reachable from the internet. There must be no other listener on port 80.
