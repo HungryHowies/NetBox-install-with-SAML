@@ -231,7 +231,7 @@ sudo ln -s /opt/netbox/contrib/netbox-housekeeping.sh /etc/cron.daily/netbox-hou
 ### Test the Application
 
 ```
-python3 manage.py runserver 0.0.0.0:8000 --insecure
+python3 /opt/netbox-3.6.5/netbox/manage.py/manage.py runserver 0.0.0.0:8000 --insecure
 ```
 
 Warning: If the test service does not run, or does not complete checks that show "OK",
