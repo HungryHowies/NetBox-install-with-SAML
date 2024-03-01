@@ -96,7 +96,7 @@ sudo chown --recursive netbox /opt/netbox/netbox/scripts/
 Save the output for the configuration step below. This will be added to Netbox configuration file.
 
 ```
-python3 ../generate_secret_key.py
+python3 /opt/netbox-3.6.5/netbox/generate_secret_key.py/generate_secret_key.py
 ```
 
 ## NetBox Configuration file (configuration.py)
