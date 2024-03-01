@@ -20,7 +20,7 @@ This documentation describes how to install NetBox, configure NetBox with Let's 
 ### PostgreSQL Database Installation
 
 ```
-apt install -y postgresql redis-server
+apt install -y postgresql libpq-dev  redis-server
 ```
 
 ### login Postgres
