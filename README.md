@@ -90,52 +90,7 @@ sudo chown --recursive netbox /opt/netbox/netbox/reports/
 ```
 sudo chown --recursive netbox /opt/netbox/netbox/scripts/
 ```
-### Netbox SAML Plugin Install
 
-Prepping for NetBox plugin to be enabled. Configuring the following files before restarting services.
-
-```
-apt install pkg-config libxml2-dev libxmlsec1-dev libxmlsec1-openssl xmlsec1
-```
-```
-source /opt/netbox/venv/bin/activate
-```
-```
-cd /opt/netbox
-```
-
-Using Pip3 install packages needed.
-
-```
-pip3 install xmlsec
-```
-```
-pip3 install django3-auth-saml2
-```
-```
-pip3 install netbox-plugin-auth-saml2
-```
-
-Add plugin's to local requirement text file.
-
-```
-sudo sh -c "echo 'django_saml2_auth' >> /opt/netbox/local_requirements.txt"
-```
-```
-sudo sh -c "echo 'netbox-plugin-auth-saml2' >> "/opt/netbox/local_requirements.txt""
-```
-
-Configure Netbox for SSO using the SAML2 Plugin
-
-```
-vi /opt/netbox/netbox/netbox/configuration.py
-```
-
-Adjust ALLOWED_HOST to FQDN.
-
-```
-ALLOWED_HOSTS = ['netbox.domain.com']
-```
 ### Generate a key for SECRET_KEY
 
 Save the output for the configuration step below. This will be added to Netbox configuration file.
@@ -350,12 +305,33 @@ Deploying certificate
 Successfully deployed certificate for netbox.domain.com to /etc/nginx/sites-enabled/default
 Congratulations! You have successfully enabled HTTPS on https://netbox.domain.com
 ```
-## Netbox SAML Plugin Install
+### Netbox SAML Plugin Install
 
-Prepping for NetBox plugin to be enables
+Prepping for NetBox plugin to be enabled. Configuring the following files before starting services.
 
+```
+apt install pkg-config libxml2-dev libxmlsec1-dev libxmlsec1-openssl xmlsec1
+```
+```
+source /opt/netbox/venv/bin/activate
+```
+```
+cd /opt/netbox
+```
 
-Add plugin's to local requirement text file
+Using Pip3 install packages needed.
+
+```
+pip3 install xmlsec
+```
+```
+pip3 install django3-auth-saml2
+```
+```
+pip3 install netbox-plugin-auth-saml2
+```
+
+Add plugin's to local requirement text file.
 
 ```
 sudo sh -c "echo 'django_saml2_auth' >> /opt/netbox/local_requirements.txt"
@@ -364,19 +340,19 @@ sudo sh -c "echo 'django_saml2_auth' >> /opt/netbox/local_requirements.txt"
 sudo sh -c "echo 'netbox-plugin-auth-saml2' >> "/opt/netbox/local_requirements.txt""
 ```
 
-Netbox Plugin for SSO using SAML2
+Configure Netbox for SSO using the SAML2 Plugin
 
 ```
 vi /opt/netbox/netbox/netbox/configuration.py
 ```
 
- Adjust ALLOWED_HOST to FQDN.
+Adjust ALLOWED_HOST to FQDN.
 
 ```
 ALLOWED_HOSTS = ['netbox.domain.com']
 ```
 
-## Zitadel XML file
+### Zitadel XML file
 
 Retrieve the metadata from Zitadel. Add /saml/v2/metadata end point on Zitadel instance. Copy
 the Metadata and Paste it in the file called DCIM.xml
@@ -615,7 +591,7 @@ SHORT_DATETIME_FORMAT = 'Y-m-d H:i'
 ```
 
 
-Settings.py file
+### Settings.py file
 
 Note: This is a large file so just copied the bottom for example.
 
