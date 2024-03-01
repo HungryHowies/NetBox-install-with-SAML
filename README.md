@@ -535,7 +535,7 @@ NetBox configuration.py file should look something like this when completed.
 
 
 ```
-ALLOWED_HOSTS = ['netbox.hungry-howard.com']
+ALLOWED_HOSTS = ['netbox.domain.com']
 DATABASE = {
   'NAME': 'netbox', # Database name
   'USER': 'netbox', # PostgreSQL username
@@ -618,7 +618,7 @@ EXEMPT_VIEW_PERMISSIONS = [
   },
 }
 LOGIN_PERSISTENCE = False
-LOGIN_REQUIRED = False
+LOGIN_REQUIRED = True
 LOGIN_TIMEOUT = None
 LOGOUT_REDIRECT_URL = 'home'
 METRICS_ENABLED = False
@@ -626,7 +626,7 @@ PLUGINS = ['django3_saml2_nbplugin']
 PLUGINS_CONFIG = {
     'django3_saml2_nbplugin': {
     'AUTHENTICATION_BACKEND': 'netbox.authentication.RemoteUserBackend',
-    'ASSERTION_URL': 'https://netbox.domaind.com/',
+    'ASSERTION_URL': 'https://netbox.domain.com/',
     'ENTITY_ID':'https://netbox.domain.com',
     'METADATA_LOCAL_FILE_PATH': '/opt/netbox/DCIM.xml',
     'CUSTOM_ATTR_BACKEND': {
