@@ -1,8 +1,7 @@
-# Netbox
-Netbox lab install
-
+# Netbox 
 
 ## Overview
+
 This documentation describes how to install NetBox, configure NetBox with Let's encrypt and enable SAML2 for Zitadel.
 
 
@@ -19,6 +18,7 @@ This documentation describes how to install NetBox, configure NetBox with Let's 
 * Net-tools (apt install net-tools)
 
 ### PostgreSQL Database Installation
+
 ```
 apt install -y postgresql
 ```
@@ -41,8 +41,8 @@ CREATE USER netbox WITH PASSWORD 'J5brHrAXFLQSif0K';
 ALTER DATABASE netbox OWNER TO netbox;
 ```
 
-
 ###  Verify Service Status
+
 ```
 redis-cli ping
 ```
@@ -54,13 +54,14 @@ apt install -y python3 python3-pip python3-venv python3-dev build-essential libx
 ```
 
 ### Check Python Version
+
 ```
 python3 -V
 ```
 
 ### Download NetBox
-```
 
+```
 wget https://github.com/netbox-community/netbox/archive/refs/tags/v3.6.5.tar.gz
 ```
 
@@ -74,7 +75,6 @@ sudo tar -xzf v3.6.5.tar.gz -C /opt
 ```
 sudo ln -s /opt/netbox-3.6.5/ /opt/netbox
 ```
-
 
 ### Create System user
 
@@ -99,6 +99,8 @@ Save the output for the configuration step below. This will be added to Netbox c
 python3 ../generate_secret_key.py
 ```
 
+## NetBox Configuration file (configuration.py)
+
 Naviagate to configuration.py file.
 
 ```
@@ -110,8 +112,6 @@ In this section of the configuration.py file add the secert key.
 ```
 SECRET_KEY = '!3#qSHaL&(7mw38....................j^mKZG@$Ax'
 ```
-
-### NetBox Configuration file ( configuration.py)
 
 NOTE: ALLOWED_HOST will be configured to localhost till the certificates are made from CertBot below.
 
@@ -145,8 +145,7 @@ REDIS = {
 }
 ```
 
-
-## Logging configuration
+### Logging configuration
 
 ```
 sudo mkdir /var/log/netbox
@@ -157,8 +156,8 @@ sudo touch /var/log/netbox/netbox.log
 ```
 sudo chown -R netbox.netbox /var/log/netbox
 ```
-Add this section to NetBox configuration.py file
-NOTE: If you copy and Paste ensure there are no white spaces.
+
+NetBox configuration.py file, Add/Configure this section. 
 
 ```
 LOGGING = {
@@ -189,13 +188,16 @@ LOGGING = {
   },
 }
 ```
-## Remote File Storage
 
-This setting has been disabled in configuration.py file
+### Remote File Storage
+
+Disabled in configuration.py file.
+
 ```
 # 'ENGINE': 'django.db.backends.postgresql', # Database engine
 ```
-## Upgrade Script
+
+### Upgrade Script
 
 To ensure the Latest Netbox verion is install.
 
@@ -209,7 +211,15 @@ Execute upgrade script
 ```
 ./upgrade.sh
 ```
-## Create a Super User
+
+Restart serivces
+
+```
+sudo systemctl restart netbox netbox-rq
+```
+
+### Create a Super User
+
 ```
 source /opt/netbox/venv/bin/activate
 ```
@@ -217,15 +227,18 @@ source /opt/netbox/venv/bin/activate
 cd /opt/netbox/netbox
 python3 manage.py createsuperuser
 ```
-## Schedule the Housekeeping Task
+
+### Schedule the Housekeeping Task
 
 ```
 sudo ln -s /opt/netbox/contrib/netbox-housekeeping.sh /etc/cron.daily/netbox-housekeeping
 ```
-## Test the Application
+### Test the Application
+
 ```
 python3 manage.py runserver 0.0.0.0:8000 --insecure
 ```
+
 Warning: If the test service does not run, or does not complete checks that show "OK",
 something has gone wrong. Call for help. Do not proceed with the rest of this guide until the
 installation has been corrected.
@@ -307,6 +320,7 @@ Deploying certificate
 Successfully deployed certificate for netbox.domain.com to /etc/nginx/sites-enabled/default
 Congratulations! You have successfully enabled HTTPS on https://netbox.domain.com
 ```
+
 ### Netbox SAML Plugin Install
 
 Prepping for NetBox plugin to be enabled. Configuring the following files before starting services.
