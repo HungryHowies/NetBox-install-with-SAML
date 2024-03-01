@@ -122,7 +122,7 @@ In this section of the configuration.py file add the secert key.
 SECRET_KEY = '!3#qSHaL&(7mw38....................j^mKZG@$Ax'
 ```
 
-NOTE: ALLOWED_HOST will be configured to localhost till the certificates are made from CertBot below.
+NOTE: ALLOWED_HOST will be configured to [] till the certificates are made from CertBot below.
 
 ```
 ALLOWED_HOSTS = ['localhost']
@@ -159,6 +159,10 @@ Disabled in configuration.py file.
 
 ```
 # 'ENGINE': 'django.db.backends.postgresql', # Database engine
+```
+Set DEBUG to true
+```
+DEBUG = True
 ```
 Save and close file.
 
@@ -242,8 +246,14 @@ sudo ln -s /opt/netbox/contrib/netbox-housekeeping.sh /etc/cron.daily/netbox-hou
 ```
 ### Test the Application
 
+Change directory
+
 ```
-python3 /opt/netbox-3.6.5/netbox/manage.py/manage.py runserver 0.0.0.0:8000 --insecure
+cd /opt/netbox-3.6.5/netbox
+```
+
+```
+python3 manage.py runserver 0.0.0.0:8000 --insecure
 ```
 
 Warning: If the test service does not run, or does not complete checks that show "OK",
