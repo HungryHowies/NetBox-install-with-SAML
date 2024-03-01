@@ -107,7 +107,7 @@ python3 /opt/netbox-3.6.5/netbox/generate_secret_key.py
 
 navigate to the following directory.
 ```
-cd /opt/netbox-3.6.5/netbox/netbox
+cd /opt/netbox/netbox/netbox
 ```
 Copy the configuration_example.py file and rename it.
 ```
