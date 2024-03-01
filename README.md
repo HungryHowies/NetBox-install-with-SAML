@@ -41,12 +41,6 @@ CREATE USER netbox WITH PASSWORD 'J5brHrAXFLQSif0K';
 ALTER DATABASE netbox OWNER TO netbox;
 ```
 
-###  Verify Service Status
-############ Something is wrong here
-```
-redis-cli ping
-```
-
 ### Installation Dependencies 
 
 ```
@@ -255,7 +249,11 @@ cd /opt/netbox-3.6.5/netbox
 ```
 python3 manage.py runserver 0.0.0.0:8000 --insecure
 ```
+###  Verify Service Status
 
+```
+redis-cli ping
+```
 Warning: If the test service does not run, or does not complete checks that show "OK",
 something has gone wrong. Call for help. Do not proceed with the rest of this guide until the
 installation has been corrected.
@@ -400,26 +398,27 @@ Adjust the configuration.py file as shown below
 ```
 vi /opt/netbox/netbox/netbox/configuration.py
 ```
-
+Plugin Configurations
 ```
 PLUGINS = ['django3_saml2_nbplugin']
-  PLUGINS_CONFIG = {
-    'django3_saml2_nbplugin':{
-    'AUTHENTICATION_BACKEND': 'netbox.authentication.RemoteUserBackend',
-    'ASSERTION_URL': 'https://netbox.domain.com/',
-    'ENTITY_ID':'https://netbox.domain.com/',
-    'METADATA_LOCAL_FILE_PATH': '/opt/netbox/DCIM.xml',
-    'CUSTOM_ATTR_BACKEND': {
-    "USERNAME_ATTR": "emailaddress",
-    "MAIL_ATTR": "emailaddress",
-    "FIRST_NAME_ATTR": "givenname",
-    "LAST_NAME_ATTR": "surname",
-    'ALWAYS_UPDATE_USER': True,
+PLUGINS_CONFIG = {
+        'django3_saml2_nbplugin':{
+        'AUTHENTICATION_BACKEND': 'django3_saml2_nbplugin.backends.SAML2CustomAttrUserBackend',
+        'ASSERTION_URL': 'https://netbox.hungry-howard.com/',
+        'ENTITY_ID':'https://netbox.hungry-howard.com/',
+        'METADATA_LOCAL_FILE_PATH': '/opt/netbox/DCIM.xml',
+        'CUSTOM_ATTR_BACKEND': {
+            "USERNAME_ATTR": "emailaddress",
+            "MAIL_ATTR": "emailaddress",
+            "FIRST_NAME_ATTR": "givenname",
+            "LAST_NAME_ATTR": "surname",
+        '   ALWAYS_UPDATE_USER': True,
     }
   }
 }
+
 ```
-### Remote Authentication configurations
+# Remote Authentication configurations
 
 NOTE: Debugging issues, add DEBUG = False to DEBUG = True
 
