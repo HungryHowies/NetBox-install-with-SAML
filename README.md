@@ -63,6 +63,12 @@ pip3 install --upgrade pip
 python3 -V
 ```
 
+### Create a symbolic link of Python binary.
+
+```
+ln -s /usr/bin/python3 /usr/bin/python
+```
+
 ### Download NetBox
 
 ```
