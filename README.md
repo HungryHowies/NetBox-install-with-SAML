@@ -368,8 +368,8 @@ PLUGINS = ['django3_saml2_nbplugin']
   PLUGINS_CONFIG = {
     'django3_saml2_nbplugin':{
     'AUTHENTICATION_BACKEND': 'netbox.authentication.RemoteUserBackend',
-    'ASSERTION_URL': 'https://netbox.hungry-howard.com/',
-    'ENTITY_ID':'https://netbox.hungry-howard.com/',
+    'ASSERTION_URL': 'https://netbox.domain.com/',
+    'ENTITY_ID':'https://netbox.domain.com/',
     'METADATA_LOCAL_FILE_PATH': '/opt/netbox/DCIM.xml',
     'CUSTOM_ATTR_BACKEND': {
     "USERNAME_ATTR": "emailaddress",
@@ -381,19 +381,28 @@ PLUGINS = ['django3_saml2_nbplugin']
   }
 }
 ```
-Remote Authentication configurations
-NOTE: Fordebugging issues add DEBUG = False to DEBUG = True
+### Remote Authentication configurations
+
+NOTE: Debugging issues, add DEBUG = False to DEBUG = True
+
+Configure the following lines as shown below.
+
 ```
 REMOTE_AUTH_ENABLED = True
+```
+```
 REMOTE_AUTH_BACKEND = 'netbox.authentication.RemoteUserBackend'
+```
+```
 REMOTE_AUTH_AUTO_CREATE_USER = True
 ```
-Create a button for SSO  
+Create/Name the button for SSO.  
 
+```
 BANNER_LOGIN = '<a href="/api/plugins/sso/login" class="btn btn-primary btn-block">Login with SSO</a>'
+```
 
-## Nginx Configuration
-
+### Nginx Configuration
 
 Edit nginx site file.
 
@@ -401,7 +410,7 @@ Edit nginx site file.
 Vi  /etc/nginx/sites-available/netbox
 ```
 
-Results
+Results:
 
 ```
 map $http_x_forwarded_proto $thescheme {
@@ -438,7 +447,7 @@ location / {
 }
 ```
 
-Configure the setting.py file
+Configure the setting.py file.
 
 ```
 vi /opt/netbox-3.6.7/netbox/netbox/settings.py
@@ -453,13 +462,13 @@ SAML2_AUTH_CONFIG = {
 }
 ```
 
-Restart nginx services
+Restart nginx services.
 
 ```
 systemctl restart nginx
 ```
 
-Restart Netbox service
+Restart Netbox service.
 
 ```
 systemctl restart netbox
@@ -467,7 +476,11 @@ systemctl restart netbox
 
 Conclusion:
 
-NetBox configruation.py file should look something like this when completed.
+### Configuration.py file
+
+NetBox configuration.py file should look something like this when completed.
+
+
 ```
 ALLOWED_HOSTS = ['netbox.hungry-howard.com']
 DATABASE = {
@@ -574,7 +587,7 @@ PLUGINS_CONFIG = {
 }
 REMOTE_AUTH_ENABLED = True
 REMOTE_AUTH_BACKEND = 'netbox.authentication.RemoteUserBackend'
-BANNER_LOGIN = '<a href="/api/plugins/sso/login" class="btn btn-primary btn-block">Login with SSO</a>'
+BANNER_LOGIN = '<a href="/api/plugins/sso/login" class="btn btn-primary btn-block">Zitadel</a>'
 REMOTE_AUTH_AUTO_CREATE_USER = True
 RELEASE_CHECK_URL = None
 RQ_DEFAULT_TIMEOUT = 300
@@ -631,9 +644,10 @@ RQ_QUEUES.update({
 })
 SAML2_AUTH_CONFIG = {
     'AUTHENTICATION_BACKEND': 'django.contrib.auth.backends.RemoteUserBackend',
-'METADATA_AUTO_CONF_URL': "https://global-edjak2.zitadel.cloud/saml/v2/metadata"
+'METADATA_AUTO_CONF_URL': "https://zitadel.domain.com/saml/v2/metadata"
 }
 ```
+
 ### Zitadel XML file
 
 ```
@@ -648,6 +662,7 @@ SAML2_AUTH_CONFIG = {
     </md:SPSSODescriptor>
 </md:EntityDescriptor>
 ```
+![image](https://github.com/HungryHowies/netbox/assets/22652276/d97b540b-fbc8-42ea-ad58-dbc0ca9013ff)
 
 
 
