@@ -42,7 +42,7 @@ ALTER DATABASE netbox OWNER TO netbox;
 ```
 
 ###  Verify Service Status
-
+############ Something is wrong here
 ```
 redis-cli ping
 ```
