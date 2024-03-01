@@ -166,7 +166,12 @@ sudo touch /var/log/netbox/netbox.log
 sudo chown -R netbox.netbox /var/log/netbox
 ```
 
-NetBox configuration.py file, Add/Configure this section. 
+NetBox configuration.py file. 
+
+```
+vi /opt/netbox-3.6.5/netbox/netbox/configuration.py
+```
+Add/Configure this section. 
 
 ```
 LOGGING = {
