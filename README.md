@@ -443,7 +443,7 @@ PLUGINS_CONFIG = {
 }
 
 ```
-# Remote Authentication configurations
+###  Remote Authentication configurations Section
 
 NOTE: Debugging issues, add DEBUG = False to DEBUG = True
 
