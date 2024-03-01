@@ -3,7 +3,7 @@ Netbox lab install
 
 
 ## Overview
-This documentation describes how to install NetBox, configure NetBox with Let's encrypt and SAML for SSO.
+This documentation describes how to install NetBox, configure NetBox with Let's encrypt and enable SAML2 for Zitadel.
 
 
 ### Prerequisite:
