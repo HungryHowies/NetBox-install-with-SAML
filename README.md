@@ -406,19 +406,9 @@ sudo sh -c "echo 'django3-auth-saml2' >> /opt/netbox/local_requirements.txt"
 sudo sh -c "echo 'netbox-plugin-auth-saml2' >> "/opt/netbox/local_requirements.txt""
 ```
 
-Configure Netbox for SSO using the SAML2 Plugin
+### Configure Netbox for SSO using the SAML2 Plugin
 
-```
-vi /opt/netbox/netbox/netbox/configuration.py
-```
-
-Adjust ALLOWED_HOST to FQDN.
-
-```
-ALLOWED_HOSTS = ['netbox.domain.com']
-```
-
-### Zitadel XML file
+Get zitadel XML file.
 
 Retrieve the metadata from Zitadel. Add /saml/v2/metadata end point on Zitadel instance. Copy
 the Metadata and Paste it in the file called DCIM.xml
@@ -426,9 +416,9 @@ the Metadata and Paste it in the file called DCIM.xml
 ```
 vi /opt/netbox/DCIM.xml
 ```
-Save and close file
+Save and close file.
 
-Adjust the configuration.py file as shown below
+Adjust the configuration.py file as shown below.
 
 ```
 vi /opt/netbox/netbox/netbox/configuration.py
