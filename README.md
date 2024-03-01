@@ -233,6 +233,7 @@ LOGGING = {
 
 ### Create a Super User
 
+######### the migrate does work here. need to move
 Apply Data migration
 
 ```
