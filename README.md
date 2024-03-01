@@ -446,7 +446,7 @@ Save and close file.
 Edit nginx site file.
 
 ```
-Vi  /etc/nginx/sites-available/netbox
+vi  /etc/nginx/sites-available/netbox
 ```
 
 Results:
