@@ -20,7 +20,7 @@ This documentation describes how to install NetBox, configure NetBox with Let's 
 ### PostgreSQL Database Installation
 
 ```
-apt install -y postgresql
+apt install -y postgresql redis-server
 ```
 
 ### login Postgres
@@ -213,13 +213,25 @@ LOGGING = {
 
 ### Create a Super User
 
-########## Something is wrong in this section
+Apply Data migration
+
+```
+python manage.py migrate
+```
 
 ```
 source /opt/netbox/venv/bin/activate
 ```
+
+Change directory.
+
 ```
 cd /opt/netbox/netbox
+```
+
+Create super user and follow the promt.
+
+```
 python3 manage.py createsuperuser
 ```
 
