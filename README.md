@@ -123,7 +123,7 @@ cp configuration_example.py configuration.py
 Edit the configuration.py file.
 
 ```
-vi /opt/netbox-3.6.5/netbox/netbox/configuration.py
+vi /opt/netbox/netbox/netbox/configuration.py
 ```
 
 In this section of the configuration.py file add the secert key.
