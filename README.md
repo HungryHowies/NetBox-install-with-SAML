@@ -86,7 +86,7 @@ ln -s /opt/netbox-3.6.5/ /opt/netbox
 adduser --system --group netbox
 ```
 ```
-schown --recursive netbox /opt/netbox/netbox/media/
+chown --recursive netbox /opt/netbox/netbox/media/
 ```
 ```
 chown --recursive netbox /opt/netbox/netbox/reports/
