@@ -177,7 +177,9 @@ DEBUG = True
 ```
 Save and close file.
 
-### Logging configuration
+### Log file
+
+Make the directory and add permission to netbox log file.
 
 ```
 sudo mkdir /var/log/netbox
@@ -189,11 +191,14 @@ sudo touch /var/log/netbox/netbox.log
 sudo chown -R netbox.netbox /var/log/netbox
 ```
 
-NetBox configuration.py file. 
+### Logging Section
+
+Reopen Netbox config file. 
 
 ```
-vi /opt/netbox-3.6.5/netbox/netbox/configuration.py
+vi /opt/netbox/netbox/netbox/configuration.py
 ```
+
 Add/Configure this section. 
 
 ```
