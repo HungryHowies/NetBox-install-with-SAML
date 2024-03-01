@@ -254,7 +254,7 @@ sudo systemctl enable netbox netbox-rq
 Check  Status
 
 ```
-systemctl status netbox.service
+systemctl status netbox netbox-rq
 ```
 
 
