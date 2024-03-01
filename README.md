@@ -94,7 +94,7 @@ sudo chown --recursive netbox /opt/netbox/netbox/scripts/
 Prepping for NetBox plugin to be enabled. Configuring the following files before restarting services.
 
 ```
-sudo apt-get install pkg-config libxml2-dev libxmlsec1-dev libxmlsec1-openssl xmlsec1
+apt install pkg-config libxml2-dev libxmlsec1-dev libxmlsec1-openssl xmlsec1
 ```
 ```
 source /opt/netbox/venv/bin/activate
