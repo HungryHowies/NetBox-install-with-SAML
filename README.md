@@ -197,15 +197,17 @@ This setting has been disabled in configuration.py file
 ```
 ## Upgrade Script
 
-NOTE: This depends on the version of Python installed.
+To ensure the Latest Netbox verion is install.
+
+Naviaagte to Netbox home directory.
 
 ```
-/opt/netbox/netbox/netbox
+cd /opt/netbox
 ```
 Execute upgrade script
 
 ```
-sudo PYTHON=/usr/bin/python3.10 /opt/netbox/upgrade.sh
+./upgrade.sh
 ```
 ## Create a Super User
 ```
