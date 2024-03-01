@@ -20,7 +20,7 @@ This documentation describes how to install NetBox, configure NetBox with Let's 
 
 ### PostgreSQL Database Installation
 ```
-sudo apt install -y postgresql
+apt install -y postgresql
 ```
 
 ### login Postgres
@@ -47,7 +47,7 @@ ALTER DATABASE netbox OWNER TO netbox;
 redis-cli ping
 ```
 
-### Installation dependencies 
+### Installation Dependencies 
 
 ```
 apt install -y python3 python3-pip python3-venv python3-dev build-essential libxml2-dev libxslt1-dev libffidev libpq-dev libssl-dev zlib1g-dev
@@ -77,6 +77,7 @@ sudo ln -s /opt/netbox-3.6.5/ /opt/netbox
 
 
 ### Create System user
+
 ```
 sudo adduser --system --group netbox
 ```
