@@ -235,21 +235,21 @@ LOGGING = {
 Gunicorn Setup
 
 ```
-sudo cp /opt/netbox/contrib/gunicorn.py /opt/netbox/gunicorn.py
+cp /opt/netbox/contrib/gunicorn.py /opt/netbox/gunicorn.py
 ```
 Systemd setup.
 
 ```
-sudo cp -v /opt/netbox/contrib/*.service /etc/systemd/system/
+cp -v /opt/netbox/contrib/*.service /etc/systemd/system/
 ```
 ```
-sudo systemctl daemon-reload
+systemctl daemon-reload
 ```
 ```
-sudo systemctl start netbox netbox-rq
+systemctl start netbox netbox-rq
 ```
 ```
-sudo systemctl enable netbox netbox-rq
+systemctl enable netbox netbox-rq
 ```
 Check Status
 
@@ -267,10 +267,15 @@ Run the packaged upgrade script (upgrade.sh) to perform the following actions:
  * Run database schema migrations
  * Aggregate static resource files on disk
 
+Change Directory
+
+```
+cd /opt/netbox/
+```
 Executing the upgrade script.
 
 ```
- /opt/netbox/upgrade.sh
+ ./upgrade.sh
 ```
 Warning: If the script does not run, or does not complete checks that show "OK",
 something has gone wrong. Call for help. Do not proceed with the rest of this guide until the
@@ -312,7 +317,11 @@ Verify Service Status
 ```
 redis-cli ping
 ```
+Log out of Python venv
 
+```
+deactivate
+```
 
 ### Create SSL Certificate with Let's Encrypt
 
