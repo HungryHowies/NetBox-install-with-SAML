@@ -772,4 +772,5 @@ SAML2_AUTH_CONFIG = {
     </md:SPSSODescriptor>
 </md:EntityDescriptor>
 ```
-![image](https://github.com/HungryHowies/netbox/assets/22652276/d97b540b-fbc8-42ea-ad58-dbc0ca9013ff)
+![image](https://github.com/HungryHowies/NetBox-install-with-SAML/assets/22652276/1f69444a-75f5-4bae-8286-a2767a41b037)
+
