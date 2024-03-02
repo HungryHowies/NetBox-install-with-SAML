@@ -2,8 +2,14 @@
 
 ## Overview
 
-This documentation describes the basic steps to install NetBox, configure NetBox with Let's encrypt and enable SAML2 Plugin for Zitadel.
-All domain.com is place holder. Add you own FQDN or IP Address.
+This documentation describes the basic steps to install NetBox. How to configure NetBox with Let's encrypt and enable SAML2 Plugin for Zitadel.
+All domain.com is place holder. Replace it with your own FQDN or IP Address. 
+
+Aquired these steps from:
+
+* [Django3 Auth SAML2 Integration](https://github.com/jeremyschulman/django3-auth-saml2)
+* [Netbox Plugin for SSO using SAML2](https://github.com/jeremyschulman/netbox-plugin-auth-saml2)
+* [Install NetBox on Ubuntu 22.04 — HostnExtra](https://hostnextra.medium.com/install-netbox-on-ubuntu-22-04-hostnextra-d894f8ec9160)
 
 
 ### Prerequisite:
