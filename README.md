@@ -442,13 +442,14 @@ Adjust the configuration.py file as shown below.
 vi /opt/netbox/netbox/netbox/configuration.py
 ```
 Plugin Configurations
+NOTE: Ensure  ENTITY_ID is correct in Zitadel Project.
 ```
 PLUGINS = ['django3_saml2_nbplugin']
 PLUGINS_CONFIG = {
         'django3_saml2_nbplugin':{
         'AUTHENTICATION_BACKEND': 'django3_saml2_nbplugin.backends.SAML2CustomAttrUserBackend',
-        'ASSERTION_URL': 'https://netbox.domian.com/',
-        'ENTITY_ID':'https://netbox.domian.com/',
+        'ASSERTION_URL': 'https://netbox.domian.com',
+        'ENTITY_ID':'https://netbox.domian.com',
         'METADATA_LOCAL_FILE_PATH': '/opt/netbox/DCIM.xml',
         'CUSTOM_ATTR_BACKEND': {
             "USERNAME_ATTR": "emailaddress",
