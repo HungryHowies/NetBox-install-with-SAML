@@ -484,6 +484,8 @@ REMOTE_AUTH_BACKEND = 'django3_saml2_nbplugin.backends.SAML2CustomAttrUserBacken
 ```
 REMOTE_AUTH_AUTO_CREATE_USER = True
 ```
+This is an extra configuration if the Login button does not redirect to Zitadel right away. The Username and Password prompt is shown. 
+
 Create/Name the button for SSO.  
 
 ```
