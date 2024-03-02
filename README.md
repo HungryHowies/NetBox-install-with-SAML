@@ -452,8 +452,8 @@ PLUGINS_CONFIG = {
         'ENTITY_ID':'https://netbox.domian.com/',
         'METADATA_LOCAL_FILE_PATH': '/opt/netbox/DCIM.xml',
         'CUSTOM_ATTR_BACKEND': {
-            "USERNAME_ATTR": "emailaddress",
-            "MAIL_ATTR": "emailaddress",
+            "USERNAME_ATTR": "UserName",
+            "MAIL_ATTR": "Email",
             "FIRST_NAME_ATTR": "givenname",
             "LAST_NAME_ATTR": "surname",
         '   ALWAYS_UPDATE_USER': True,
