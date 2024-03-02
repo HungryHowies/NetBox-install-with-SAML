@@ -9,11 +9,11 @@ All domain.com is place holder. Add you own FQDN or IP Address.
 ### Prerequisite:
 
 * Ubunt-22.0.4
-* All updates/upgrade completed (sudo apt update && upgrade)
+* All updates/upgrade completed 
 * Nginx (apt install nginx)
 * Hosts file is configured
 * Hostname file is configured
-* Date/Time corrected (sudo timedatectl set-timezone America/Chicago)
+* Date/Time corrected 
 * Static IP Address
 
 ### PostgreSQL Database Installation
