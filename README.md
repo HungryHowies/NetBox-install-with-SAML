@@ -449,7 +449,9 @@ Adjust the configuration.py file as shown below.
 vi /opt/netbox/netbox/netbox/configuration.py
 ```
 Plugin Configurations
+
 NOTE: Ensure  ENTITY_ID is correct in Zitadel Project.
+
 ```
 PLUGINS = ['django3_saml2_nbplugin']
 PLUGINS_CONFIG = {
