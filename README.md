@@ -479,7 +479,7 @@ Configure the following lines as shown below.
 REMOTE_AUTH_ENABLED = True
 ```
 ```
-REMOTE_AUTH_BACKEND = 'netbox.authentication.RemoteUserBackend'
+REMOTE_AUTH_BACKEND = 'django3_saml2_nbplugin.backends.SAML2CustomAttrUserBackend'
 ```
 ```
 REMOTE_AUTH_AUTO_CREATE_USER = True
