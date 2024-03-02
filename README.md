@@ -2,7 +2,8 @@
 
 ## Overview
 
-This documentation describes how to install NetBox, configure NetBox with Let's encrypt and enable SAML2 for Zitadel.
+This documentation describes how to install NetBox, configure NetBox with Let's encrypt and enable SAML2 Plugin for Zitadel.
+All domain.com is place holder. Add you own FQDN or IP Address.
 
 
 ### Prerequisite:
