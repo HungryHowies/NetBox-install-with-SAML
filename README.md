@@ -230,33 +230,26 @@ LOGGING = {
 ```
 ## NetBox Service, User and Upgrade Script
 
-Gunicorn Setup
+Gunicorn Setup.
 
 ```
 cp /opt/netbox/contrib/gunicorn.py /opt/netbox/gunicorn.py
 ```
+
 Systemd setup.
 
 ```
 cp -v /opt/netbox/contrib/*.service /etc/systemd/system/
 ```
+
+Reload systemd
+
 ```
 systemctl daemon-reload
 ```
-```
-systemctl start netbox netbox-rq
-```
-```
-systemctl enable netbox netbox-rq
-```
-Check Status
+Service will not start until next steps are executed.
 
-```
-systemctl status netbox netbox-rq
-```
-
-
-Create a Super User
+### Create a Super User
 
 Run the packaged upgrade script (upgrade.sh) to perform the following actions:
 
@@ -278,6 +271,24 @@ Executing the upgrade script.
 Warning: If the script does not run, or does not complete checks that show "OK",
 something has gone wrong. Call for help. Do not proceed with the rest of this guide until the
 installation has been corrected.
+
+Restart Services
+
+```
+systemctl restart  netbox netbox-rq
+```
+
+Enable Service on boot.
+
+```
+systemctl enable netbox netbox-rq
+```
+
+Check Status of services.
+
+```
+systemctl status netbox netbox-rq
+```
 
 Enter Python virtual environment.
 
