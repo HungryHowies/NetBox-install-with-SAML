@@ -131,11 +131,12 @@ In this section of the configuration.py file add the secert key.
 SECRET_KEY = '!3#qSHaL&(7mw38....................j^mKZG@$Ax'
 ```
 
-NOTE: ALLOWED_HOST will be configured to ['*'].
-
+ Set the Database NAME,USER and PASSWORD. ALLOWED_HOST will be configured to ['*']. REDIS should be default settings.
+ Results:
 ```
 ALLOWED_HOSTS = ['*']
 DATABASE = {
+  'ENGINE': 'django.db.backends.postgresql',  # Database engine
   'NAME': 'netbox', # Database name
   'USER': 'netbox', # PostgreSQL username
   'PASSWORD': 'J5brHrAXFLQSif0K', # PostgreSQL password
