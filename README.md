@@ -180,13 +180,13 @@ Save and close file.
 Make the directory and add permission to netbox log file.
 
 ```
-sudo mkdir /var/log/netbox
+mkdir /var/log/netbox
 ```
 ```
-sudo touch /var/log/netbox/netbox.log
+touch /var/log/netbox/netbox.log
 ```
 ```
-sudo chown -R netbox.netbox /var/log/netbox
+chown -R netbox.netbox /var/log/netbox
 ```
 
 ### Logging Section
