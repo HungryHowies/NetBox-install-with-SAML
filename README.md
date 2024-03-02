@@ -14,8 +14,6 @@ This documentation describes how to install NetBox, configure NetBox with Let's 
 * Hostname file is configured
 * Date/Time corrected (sudo timedatectl set-timezone America/Chicago)
 * Static IP Address
-* Install locate (apt install mlocate)
-* Net-tools (apt install net-tools)
 
 ### PostgreSQL Database Installation
 
