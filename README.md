@@ -698,26 +698,9 @@ SHORT_DATETIME_FORMAT = 'Y-m-d H:i'
 
 ### Settings.py file
 
-Note: This is a large file so just copied the bottom for example.
+This shows the bottom of the file.
 
 ```
-django_apps = plugin_config.django_apps
-if plugin_name in django_apps:
-django_apps.pop(plugin_name)
-if plugin_module not in django_apps:
-django_apps.append(plugin_module)
-for app in django_apps:
-if "." in app:
-parts = app.split(".")
-spec = importlib.util.find_spec(".".join(parts[:-1]))
-else:
-spec = importlib.util.find_spec(app)
-if spec is None:
-raise ImproperlyConfigured(
-    f"Failed to load django_apps specified by plugin {plugin_name}: {django_apps} "
-    f"The module {app} cannot be imported. Check that the necessary package has been "
-    "installed within the correct Python environment."
-)
 INSTALLED_APPS.extend(django_apps)
 sorted_apps = reversed(list(dict.fromkeys(reversed(INSTALLED_APPS))))
 INSTALLED_APPS = list(sorted_apps)
@@ -734,9 +717,10 @@ raise ImproperlyConfigured(
 RQ_QUEUES.update({
     f"{plugin_name}.{queue}": RQ_PARAMS for queue in plugin_config.queues
 })
+
 SAML2_AUTH_CONFIG = {
     'AUTHENTICATION_BACKEND': 'django.contrib.auth.backends.RemoteUserBackend',
-'METADATA_AUTO_CONF_URL': "https://zitadel.domain.com/saml/v2/metadata"
+     'METADATA_AUTO_CONF_URL': "https://zitadel.domain.com/saml/v2/metadata"
 }
 ```
 
