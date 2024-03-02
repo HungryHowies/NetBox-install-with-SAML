@@ -448,8 +448,8 @@ PLUGINS = ['django3_saml2_nbplugin']
 PLUGINS_CONFIG = {
         'django3_saml2_nbplugin':{
         'AUTHENTICATION_BACKEND': 'django3_saml2_nbplugin.backends.SAML2CustomAttrUserBackend',
-        'ASSERTION_URL': 'https://netbox.domian.com',
-        'ENTITY_ID':'https://netbox.domian.com',
+        'ASSERTION_URL': 'https://netbox.domian.com/',
+        'ENTITY_ID':'https://netbox.domian.com/',
         'METADATA_LOCAL_FILE_PATH': '/opt/netbox/DCIM.xml',
         'CUSTOM_ATTR_BACKEND': {
             "USERNAME_ATTR": "emailaddress",
@@ -688,8 +688,8 @@ PLUGINS_CONFIG = {
     'ENTITY_ID':'https://netbox.domain.com',
     'METADATA_LOCAL_FILE_PATH': '/opt/netbox/DCIM.xml',
     'CUSTOM_ATTR_BACKEND': {
-    "USERNAME_ATTR": "emailaddress",
-    "MAIL_ATTR": "emailaddress",
+    "USERNAME_ATTR": "UserName",
+    "MAIL_ATTR": "Email",
     "FIRST_NAME_ATTR": "givenname",
     "LAST_NAME_ATTR": "surname",
     'ALWAYS_UPDATE_USER': True,
@@ -697,7 +697,7 @@ PLUGINS_CONFIG = {
   }
 }
 REMOTE_AUTH_ENABLED = True
-REMOTE_AUTH_BACKEND = 'netbox.authentication.RemoteUserBackend'
+REMOTE_AUTH_BACKEND = 'django3_saml2_nbplugin.backends.SAML2CustomAttrUserBackend'
 BANNER_LOGIN = '<a href="/api/plugins/sso/login" class="btn btn-primary btn-block">Zitadel</a>'
 REMOTE_AUTH_AUTO_CREATE_USER = True
 RELEASE_CHECK_URL = None
@@ -748,7 +748,7 @@ SAML2_AUTH_CONFIG = {
 ```
 <?xml version="1.0"?>
   <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
-    entityID="https://netbox3.hungry-howard.com">
+    entityID="https://netbox3.hungry-howard.com/">
   <md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false"
     protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
       <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://netbox.domain.com/" />
@@ -779,25 +779,3 @@ Restart serivces
 ```
 sudo systemctl restart netbox netbox-rq
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
