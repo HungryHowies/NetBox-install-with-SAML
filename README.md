@@ -592,7 +592,7 @@ NetBox configuration.py file should look something like this when completed.
 
 
 ```
-ALLOWED_HOSTS = ['netbox.domain.com']
+ALLOWED_HOSTS = ['*']
 DATABASE = {
   'NAME': 'netbox', # Database name
   'USER': 'netbox', # PostgreSQL username
@@ -703,7 +703,7 @@ RELEASE_CHECK_URL = None
 RQ_DEFAULT_TIMEOUT = 300
 SESSION_COOKIE_NAME = 'sessionid'
 SESSION_FILE_PATH = None
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Chicago' <---- Adjust Time Zone
 DEBUG= True
 DATE_FORMAT = 'N j, Y'
 SHORT_DATE_FORMAT = 'Y-m-d'
