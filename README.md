@@ -319,14 +319,14 @@ Test the Application
 ```
 python3 manage.py runserver 0.0.0.0:8000 --insecure
 ```
-Once test is completed exit out of Python venv.
 
 Verify Service Status
 
 ```
 redis-cli ping
 ```
-Log out of Python venv
+Once test is completed exit out of Python venv.
+Log out of Python venv.
 
 ```
 deactivate
