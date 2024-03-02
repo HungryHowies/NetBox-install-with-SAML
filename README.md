@@ -249,7 +249,7 @@ systemctl daemon-reload
 ```
 Service will not start until next steps are executed.
 
-### Create a Super User
+### Run Upgrade Script && Create a Super User
 
 Run the packaged upgrade script (upgrade.sh) to perform the following actions:
 
