@@ -131,8 +131,10 @@ In this section of the configuration.py file add the secert key.
 SECRET_KEY = '!3#qSHaL&(7mw38....................j^mKZG@$Ax'
 ```
 
- Set the Database NAME,USER and PASSWORD. ALLOWED_HOST will be configured to ['*']. REDIS should be default settings.
- Results:
+Set the Database NAME,USER and PASSWORD. ALLOWED_HOST will be configured to ['*']. REDIS section should be default settings.
+ 
+Results:
+ 
 ```
 ALLOWED_HOSTS = ['*']
 DATABASE = {
