@@ -167,7 +167,7 @@ REDIS = {
 ```
 ### Remote File Storage
 
-Disabled in configuration.py file.
+Disable this setting in configuration.py file.
 
 ```
 # 'ENGINE': 'django.db.backends.postgresql', # Database engine
