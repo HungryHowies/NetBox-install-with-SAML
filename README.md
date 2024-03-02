@@ -596,9 +596,7 @@ Restart Netbox service.
 systemctl restart netbox
 ```
 
-Conclusion:
-
-### Configuration.py file
+### Conclusion:
 
 NetBox configuration.py file should look something like this when completed.
 
