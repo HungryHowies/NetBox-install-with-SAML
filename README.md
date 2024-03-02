@@ -767,24 +767,3 @@ SAML2_AUTH_CONFIG = {
 </md:EntityDescriptor>
 ```
 ![image](https://github.com/HungryHowies/netbox/assets/22652276/d97b540b-fbc8-42ea-ad58-dbc0ca9013ff)
-
-### Using the upgrade Script
-
-To ensure the Latest Netbox verion is install.
-
-Naviaagte to Netbox home directory.
-
-```
-cd /opt/netbox
-```
-Execute upgrade script
-
-```
-./upgrade.sh
-```
-
-Restart serivces
-
-```
-sudo systemctl restart netbox netbox-rq
-```
