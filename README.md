@@ -228,7 +228,7 @@ LOGGING = {
   },
 }
 ```
-## NetBox Service, User and Upgrade Script
+### NetBox Service Setup
 
 Gunicorn Setup.
 
