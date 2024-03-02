@@ -682,7 +682,7 @@ METRICS_ENABLED = False
 PLUGINS = ['django3_saml2_nbplugin']
 PLUGINS_CONFIG = {
     'django3_saml2_nbplugin': {
-    'AUTHENTICATION_BACKEND': 'netbox.authentication.RemoteUserBackend',
+    'AUTHENTICATION_BACKEND': 'django3_saml2_nbplugin.backends.SAML2CustomAttrUserBackend',
     'ASSERTION_URL': 'https://netbox.domain.com/',
     'ENTITY_ID':'https://netbox.domain.com',
     'METADATA_LOCAL_FILE_PATH': '/opt/netbox/DCIM.xml',
