@@ -2,7 +2,7 @@
 
 ## Overview
 
-This documentation describes how to install NetBox, configure NetBox with Let's encrypt and enable SAML2 Plugin for Zitadel.
+This documentation describes the basic steps to install NetBox, configure NetBox with Let's encrypt and enable SAML2 Plugin for Zitadel.
 All domain.com is place holder. Add you own FQDN or IP Address.
 
 
@@ -102,7 +102,7 @@ chown --recursive netbox /opt/netbox/netbox/scripts/
 
 ### Generate a key for SECRET_KEY
 
-Save the output for the configuration step below. This will be added to Netbox configuration file.
+Save the output from the step below. This will be added to Netbox configuration file.
 
 ```
 python3 /opt/netbox/netbox/generate_secret_key.py
