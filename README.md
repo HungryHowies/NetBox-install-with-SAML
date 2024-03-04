@@ -608,6 +608,12 @@ Restart Netbox service.
 systemctl restart netbox
 ```
 
+Add netbox Permissions to scritps directory.
+
+```
+chown --recursive netbox /opt/netbox/netbox/scripts/
+```
+
 ### Conclusion:
 
 NetBox configuration.py file should look something like this when completed.
