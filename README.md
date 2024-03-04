@@ -400,7 +400,7 @@ Congratulations! You have successfully enabled HTTPS on https://netbox.domain.co
 
 ### Netbox SAML Plugin Install
 
-Prepping for NetBox plugin to be enabled. Configuring the following files before starting services.
+Prepping for NetBox plugin to be enabled. Configuring the following files.
 
 ```
 apt install pkg-config libxml2-dev libxmlsec1-dev libxmlsec1-openssl xmlsec1
