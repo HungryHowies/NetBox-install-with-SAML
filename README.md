@@ -501,6 +501,12 @@ BANNER_LOGIN = '<a href="/api/plugins/sso/login" class="btn btn-primary btn-bloc
 ```
 Save and close file.
 
+Log out of Python venv.
+
+```
+deactivate
+```
+
 ### Nginx Configuration
 
 Edit nginx site file.
