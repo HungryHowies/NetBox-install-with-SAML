@@ -608,8 +608,14 @@ Restart Netbox service.
 systemctl restart netbox
 ```
 
-Add netbox Permissions to scritps directory.
+### Netbox Permissions.
 
+```
+chown --recursive netbox /opt/netbox/netbox/media/
+```
+```
+chown --recursive netbox /opt/netbox/netbox/reports/
+```
 ```
 chown --recursive netbox /opt/netbox/netbox/scripts/
 ```
