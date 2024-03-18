@@ -457,6 +457,7 @@ vi /opt/netbox/netbox/netbox/configuration.py
 Plugin Configurations
 
 NOTE: Ensure  ENTITY_ID is correct in Zitadel Project.
+For User attributes, ensure they match Zitadel. I found it to be case sensitive. 
 
 ```
 PLUGINS = ['django3_saml2_nbplugin']
@@ -469,7 +470,7 @@ PLUGINS_CONFIG = {
         'CUSTOM_ATTR_BACKEND': {
             "USERNAME_ATTR": "UserName",
             "MAIL_ATTR": "Email",
-            "FIRST_NAME_ATTR": "givenname",
+            "FIRST_NAME_ATTR": "GivenName",
             "LAST_NAME_ATTR": "surname",
         '   ALWAYS_UPDATE_USER': True,
     }
@@ -723,7 +724,7 @@ PLUGINS_CONFIG = {
     'CUSTOM_ATTR_BACKEND': {
     "USERNAME_ATTR": "UserName",
     "MAIL_ATTR": "Email",
-    "FIRST_NAME_ATTR": "givenname",
+    "FIRST_NAME_ATTR": "GivenName",
     "LAST_NAME_ATTR": "surname",
     'ALWAYS_UPDATE_USER': True,
     }
