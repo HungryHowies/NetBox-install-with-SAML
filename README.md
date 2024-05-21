@@ -793,3 +793,28 @@ SAML2_AUTH_CONFIG = {
 ```
 ![image](https://github.com/HungryHowies/NetBox-install-with-SAML/assets/22652276/1f69444a-75f5-4bae-8286-a2767a41b037)
 
+## Using Default OIDC for SSO Testing
+```
+LOGIN_REQUIRED = True
+REMOTE_AUTH_BACKEND = 'social_core.backends.azuread_tenant.AzureADTenantOAuth2'
+
+SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_RESOURCE  = '{{ AzureAD App Registration Client ID }}'
+SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_KEY       = '{{ AzureAD App Registration Client ID }}'
+SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_SECRET    = '{{ AzureAD App Registration Client Secret }}'
+SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_TENANT_ID = '{{ Azure Tenant ID }}'
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'netbox.custom_pipeline.set_username',
+    'social_core.pipeline.user.create_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+    'netbox.custom_pipeline.set_role'
+)
+```
+
