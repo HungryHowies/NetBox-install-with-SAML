@@ -782,7 +782,7 @@ SAML2_AUTH_CONFIG = {
 ```
 <?xml version="1.0"?>
   <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
-    entityID="https://netbox3.hungry-howard.com/">
+    entityID="https://netbox3.domain.com/">
   <md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false"
     protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
       <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://netbox.domain.com/" />
