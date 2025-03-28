@@ -10,7 +10,7 @@ Click the add button on the top right and give the permission a name.
 Select any or all action required.
 Next select Object types that are needed. Then click the create button.
 On the left pane click on Groups and click the add button top right. and give the group a name.
-Next to Permissions section select the drop down from the  permission create above. The click create button.
+Next to Permissions section select the drop down from the permission create above. Then click create button.
 
 ## Zitadel
 
