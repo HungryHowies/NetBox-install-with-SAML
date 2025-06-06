@@ -10,3 +10,7 @@ pip3 uninstall rq
 pip3 install  "rq==1.13.0"
 systemctl restart netbox netbox-rq
 ```
+### Web UI issues
+```
+./manage.py collectstatic
+```
